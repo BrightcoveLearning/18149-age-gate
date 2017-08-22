@@ -3,13 +3,77 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Untitled Document</title>
+  <title>Brightcove Player Sample: Age Gate</title>
+  <style>
+    /* override default styles for overlay */
+    .vjs-overlay,
+    .vjs-overlay.vjs-overlay-top-left {
+        width: 100%;
+        height: 100%;
+        color: #FFF;
+        background-color: rgba(255, 255, 255, 0.6);
+        left: 0;
+        top: 0;
+        padding-top: 100px;
+        font-size: 24px;
+        text-align: center;
+        padding-left: 0;
+    }
+    /* hide the control bar and big play button */
+    .video-agelist.video-js .vjs-control-bar,
+    .video-agelist .vjs-big-play-button {
+        display: none;
+    }
+    /* set cursor for overlay text */
+    #ageGateButton {
+       cursor: pointer;
+    }
+    /* set player size */
+    .video-js {
+        width: 640px;
+        height: 360px;
+    }
+</style>
 </head>
 
 <body>
+  <video id="video_1" data-video-id="4172255216001"
+	 data-account="1752604059001"
+	 data-player="SkxKHxlnSW"
+	 data-embed="default"
+	 data-application-id
+	 class="video-js"
+	 controls
+	 width="640"
+	 height="360"></video>
+  <script src="//players.brightcove.net/1752604059001/SkxKHxlnSW_default/index.min.js"></script>
 
+  <script type="text/JavaScript">
+  var myPlayer,
+  eAgeGateButton;
 
+  videojs("video_1").ready(function(){
+    // Get a reference to the player when it is ready
+    myPlayer = this;
+    // Add the class which hides the player controls and the big play button
+    myPlayer.addClass("video-agelist");
 
+    // +++ Set up listening for when the user clicks the age verification text +++
+    // Listen for when the player has initial duration and dimension information
+    myPlayer.on("loadedmetadata", function() {
+      // Get a reference to the age verification text in the overlay
+      eAgeGateButton = document.getElementById("ageGateButton");
+        //
+        // Listen for age verification text click events
+        eAgeGateButton.addEventListener("click", function() {
+          // Remove the class which hides the player controls and the big play button
+          myPlayer.removeClass("video-agelist");
+          // Start video playback
+          myPlayer.play();
+        });
+    });
+  });
+</script>
 </body>
 
 </html>

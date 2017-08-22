@@ -3,13 +3,25 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Untitled Document</title>
+  <title>Brightcove Player Sample: Age Gate</title>
+  <link href="age-gate.css" rel="stylesheet">
 </head>
 
 <body>
+  <video id="video_1" data-video-id="4172255216001"
+	 data-account="1752604059001"
+	 data-player="SkxKHxlnSW"
+	 data-embed="default"
+	 data-application-id
+	 class="video-js"
+	 controls
+	 width="640"
+	 height="360"></video>
+  <script src="//players.brightcove.net/1752604059001/SkxKHxlnSW_default/index.min.js"></script>
 
-
-
+  <script type="text/javascript" src="age-gate.js"></script>
+  <script>videojs('video_1').ageGate();</script>
+  
 </body>
 
 </html>
