@@ -1,7 +1,7 @@
 videojs.registerPlugin('ageGate', function() {
   // Get a reference to the player when it is ready
     var myPlayer = this,
-        eAgeGateButton;;
+        eAgeGateButton;
     // Add the class which hides the player controls and the big play button
     myPlayer.addClass("video-agelist");
 
@@ -19,5 +19,4 @@ videojs.registerPlugin('ageGate', function() {
           myPlayer.play();
         });
     });
-
 });

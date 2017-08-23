@@ -37,7 +37,7 @@
 </head>
 
 <body>
-  <video id="video_1" data-video-id="4172255216001"
+  <video id="myPlayerID" data-video-id="4172255216001"
 	 data-account="1752604059001"
 	 data-player="SkxKHxlnSW"
 	 data-embed="default"
@@ -52,7 +52,7 @@
   var myPlayer,
   eAgeGateButton;
 
-  videojs("video_1").ready(function(){
+  videojs("myPlayerID").ready(function(){
     // Get a reference to the player when it is ready
     myPlayer = this;
     // Add the class which hides the player controls and the big play button
