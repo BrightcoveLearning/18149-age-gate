@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <video id="myPlayerID" data-video-id="4172255216001"
+  <video-js id="myPlayerID" data-video-id="4172255216001"
 	 data-account="1752604059001"
 	 data-player="SkxKHxlnSW"
 	 data-embed="default"
@@ -16,11 +16,11 @@
 	 class="video-js"
 	 controls
 	 width="640"
-	 height="360"></video>
-  <script src="//players.brightcove.net/1752604059001/SkxKHxlnSW_default/index.min.js"></script>
+	 height="360"></video-js>
+  <script src="https://players.brightcove.net/1752604059001/SkxKHxlnSW_default/index.min.js"></script>
 
   <script type="text/javascript" src="age-gate.js"></script>
-  <script>videojs('myPlayerID').ageGate();</script>
+  <script>videojs.getPlayer('myPlayerID').ageGate();</script>
 
 </body>
 
